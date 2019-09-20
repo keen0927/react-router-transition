@@ -1,25 +1,25 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { Route, Link } from 'react-router-dom';
+import Home from './pages/Home';
+import About from './pages/About';
+import Profile from './pages/Profile';
+import ProfileRepeat from './pages/ProfileRepeat';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <ul>
+        <li><Link to='/'>홈</Link></li>
+        <li><Link to='/about'>소개</Link></li>
+        <li><Link to='/profile/keen'>keen 프로필</Link></li>
+        <li><Link to='/profile/sil'>eunsil 프로필</Link></li>
+        <li><Link to='/profileRepeat?detail=true'>민주스</Link></li>
+      </ul>
+      <Route path="/" component={Home} exact={true} />
+      <Route path={['/about','/info']} component={About} />
+      <Route path={'/profile/:username'} component={Profile} />
+      <Route path={'/profileRepeat'} component={ProfileRepeat} />
+    </>
   );
 }
 
