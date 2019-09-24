@@ -1,8 +1,26 @@
-.homeTransition-appear{
+
+// .switch-transition-appear {
+//     // opacity: 0;
+//     transition: transform 0.2s;
+//     transform: translateX(100%)
+// }
+
+// .switch-transition-appear-done {
+//     transition: transform 0.2s;
+//     transform: translateX(0)
+// }
+
+.switch-transition-enter {
     opacity: 0;
-  }
-   
-  .homeTransition-appear.homeTransition-appear-active{
+}
+.switch-transition-enter-active {
     opacity: 1;
-    transition: all .5s ease-in-out;
-  }
+    transition: opacity 200ms;
+}
+.switch-transition-exit {
+    opacity: 1;
+}
+.switch-transition-exit-active {
+    opacity: 0;
+    transition: opacity 200ms;
+}
