@@ -1,5 +1,5 @@
 import React from 'react';
-import { Route, Link } from 'react-router-dom';
+import { Route, Link, Switch } from 'react-router-dom';
 import Home from './pages/Home';
 import About from './pages/About';
 // import Profile from './pages/Profile';
@@ -19,12 +19,14 @@ function App() {
         <li><Link to='/profileRepeat?detail=true'>민주스</Link></li>
         <li><Link to='/history'>히스토리 예제</Link></li>
       </ul>
-      <Route path="/" component={Home} exact={true} />
-      <Route path={['/about','/info']} component={About} />
-      {/* <Route path={'/profile/:username'} component={Profile} /> */}
-      <Route path="/profiles" component={Profiles} />
-      <Route path={'/profileRepeat'} component={ProfileRepeat} />
-      <Route path={'/history'} component={HistorySample} />
+      <Switch>
+        <Route path="/" component={Home} exact={true} />
+        <Route path={['/about','/info']} component={About} />
+        {/* <Route path={'/profile/:username'} component={Profile} /> */}
+        <Route path="/profiles" component={Profiles} />
+        <Route path={'/profileRepeat'} component={ProfileRepeat} />
+        <Route path={'/history'} component={HistorySample} />
+      </Switch>
     </>
   );
 }
